@@ -656,12 +656,14 @@
                             </a>
 
                         </div>
-
+                            
+                    @foreach($faqs as $faq)
+                        <div>
                         <div class="faq-item accordion-item">
 
                             <div class="faq-header accordion-title">
 
-                                <span>How Do I Get My Radio Code?</span>
+                                <span>{{ $faq->title }}</span>
 
                                 <span class="icon"><i class="mdi
 
@@ -671,211 +673,15 @@
 
                             <div class="faq-content accordion-content">
 
-                                <p>Getting a Ford radio code online has
-
-                                    never been easier, all that we need
-
-                                    is the serial number of your radio,
-
-                                    input the serial into our website
-
-                                    and instantly get your radio code.
-
-                                    An email will also be sent as
-
-                                    confirmation.</p>
+                                <p>{{ $faq->description }}</p>
 
                             </div>
 
                         </div>
-
-                        <div class="faq-item accordion-item">
-
-                            <div class="faq-header accordion-title">
-
-                                <span>How Do I Get Code 6000CD?</span>
-
-                                <span class="icon"><i class="mdi
-
-                                                    mdi-plus"></i></span>
-
-                            </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>The 6000CD is the most popular Ford
-
-                                    radio model, first you must obtain
-
-                                    the serial number. visit our Ford
-
-                                    6000CD Page for full instructions.</p>
-
-                            </div>
-
                         </div>
-
-                        <div class="faq-item accordion-item">
-
-                            <div class="faq-header accordion-title">
-
-                                <span>My Serial Is Not Displaying
-
-                                    On-Screen</span>
-
-                                <span class="icon"><i class="mdi
-
-                                                    mdi-plus"></i></span>
-
-                            </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>If you have tried hold down pre-set
-
-                                    buttons 1 &amp; 6 or 2 &amp; 6 and
-
-                                    the serial number is still not
-
-                                    displaying on the radios screen, the
-
-                                    radio will need to be pulled
-
-                                    forwards to get access to the label
-
-                                    on the back where the serial will be
-
-                                    printed.</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="faq-item accordion-item">
-
-                            <div class="faq-header accordion-title">
-
-                                <span>My Serial Does Not Begin With M Or
-
-                                    V</span>
-
-                                <span class="icon"><i class="mdi
-
-                                                    mdi-plus"></i></span>
-
-                            </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>There are some exceptions to M or V,
-
-                                    881, BP or C7 are also Ford serial
-
-                                    numbers but can only be found on the
-
-                                    radios label on the back. Mdj5dp or
-
-                                    5000 are NOT serial numbers for Ford
-
-                                    radios, if this is the only
-
-                                    information that shows on screen,
-
-                                    the radio must be removed and the
-
-                                    serial number will be printed on the
-
-                                    back.</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="faq-item accordion-item">
-
-                            <div class="faq-header accordion-title">
-
-                                <span>How Do I Take My Ford Radio Out?</span>
-
-                                <span class="icon"><i class="mdi
-
-                                                    mdi-plus"></i></span>
-
-                            </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>Removing a Ford radio is very easy
-
-                                    and does not require any specialist
-
-                                    skills, radio release keys are
-
-                                    designed to press into place which
-
-                                    allows the radio to be taken out.</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="faq-item accordion-item">
-
-                            <div class="faq-header accordion-title">
-
-                                <span>Radio Displaying LOCKED 10</span>
-
-                                <span class="icon"><i class="mdi
-
-                                                    mdi-plus"></i></span>
-
-                            </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>If the radio is not allowing the code
-
-                                    to be entered, disconnect the car
-
-                                    battery for 1 hour, this will reset
-
-                                    the radio and allow for 3 more final
-
-                                    attempts of input.</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="faq-item accordion-item">
-
-                            <div class="faq-header accordion-title">
-
-                                <span>Radio Displaying LOCKED 13</span>
-
-                                <span class="icon"><i class="mdi
-
-                                                    mdi-plus"></i></span>
-
-                            </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>LOCKED 13, the incorrect code has
-
-                                    been entered into the radio 13
-
-                                    times, radios displaying LOCKED13
-
-                                    cannot be decoded online and must go
-
-                                    to a Ford dealership.</p>
-
-                            </div>
-
-                        </div>
-
+                        @endforeach
                     </div>
+                    
 
                 </div>
 
