@@ -24,9 +24,7 @@ class WebsiteController extends Controller {
         $brands = ManufacturerCategory::all();
         $chooses = Choose::all();
         $faqs = Faq::all();
-        return view('website.online-ford-radio-codes')->with('brands', $brands)
-            ->with('chooses', $chooses)
-                ->with('faqs', $faqs);
+        return view('website.online-ford-radio-codes', compact('brands', 'chooses', 'faqs'));
     }
 
     public function brandsList() {

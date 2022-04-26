@@ -373,26 +373,24 @@
 
         </div>
 
-        
+
 
         <div id="SellingPoints" class="swiper-container">
-        
+
 
             <div class="columns is-multiline is-mobile">
-            @if(isset($chooses))
-        @foreach($chooses as $choose)
+                @if(isset($chooses))
+                @foreach($chooses as $choose)
 
-                <div class="column is-one-quarter-desktop
-
-                                is-half-tablet is-full-mobile">
+                <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
 
                     <div class="selling-point-wrapper">
 
                         <div class="selling-point-header">
 
-                            <div class="image selling-point-icon">
+                            <div class="image selling-point-icon justify-content">
 
-                            <img src="{{ url('Uploads/'.$choose->image) }}">
+                                <img src="{{ url('Uploads/'.$choose->image) }}">
 
                             </div>
 
@@ -402,10 +400,10 @@
 
                     </div>
                 </div>
-                
-            
-        @endforeach
-        @endif
+
+
+                @endforeach
+                @endif
             </div>
         </div>
 
@@ -435,48 +433,11 @@
 
     <div class="container is-fluid">
 
+                
         <div id="MostPopularSLider" class="swiper">
-
-
-
+        
             <div class="swiper-wrapper row">
-
-
-
-                <!--@foreach($brands as $each)-->
-
-
-
-                <!--<div class="swiper-slide col-lg-4 col-md-12 col-xs-12 col-centered">-->
-
-                <!--    <div class="card most-popular-card-container">-->
-
-                <!--        <a class="most-popular-card-link" href="href="{{route('radio-code-order.show', $each)}}" title="{{$each->name}} Radio Code">-->
-
-                <!--            <h4 class="title is-4-->
-
-                <!--                            most-popular-card-title">{{$each->name}}</h4>-->
-
-                <!--            <div class="most-popular-card-image"><img src="src="{{$each->logo_url}}""-->
-
-                <!--                    alt="{{$each->name}} Radio Code"></div>-->
-
-                <!--        </a>-->
-
-                <!--    </div>-->
-
-                <!--</div>-->
-
-
-
-                <!--<br>-->
-
-
-
-                <!--@endforeach-->
-
-
-
+            @foreach($brands as $brand)
                 <div class="swiper-slide col-lg-4 col-md-12 col-xs-12 col-centered">
 
                     <div class="card most-popular-card-container">
@@ -485,9 +446,9 @@
 
                             <h4 class="title is-4
 
-                                                        most-popular-card-title">Ford Focus</h4>
+                                most-popular-card-title">{{ $brand->name }}</h4>
 
-                            <div class="most-popular-card-image"><img src="{{asset('img/popular-ford-focus-radio.jpg')}}" alt="Ford Focus Radio Code"></div>
+                            <div class="most-popular-card-image"><img src="{{ $brand->logo_url }}" alt="Ford Focus Radio Code"></div>
 
                         </a>
 
@@ -495,15 +456,16 @@
 
                 </div>
 
+                
+        @endforeach
+<!-- 
                 <div class="swiper-slide col-lg-4 col-md-12 col-xs-12 col-centered">
 
                     <div class="card most-popular-card-container">
 
                         <a class="most-popular-card-link" href="/ford-fiesta-radio-codes" title="Ford Fiesta Radio Code">
 
-                            <h4 class="title is-4
-
-                                                        most-popular-card-title">Ford Fiesta</h4>
+                            <h4 class="title is-4 most-popular-card-title">Ford Fiesta</h4>
 
                             <div class="most-popular-card-image"><img src="img/popular-ford-fiesta-radio.jpg" alt="Ford Fiesta Radio Code">
 
@@ -521,31 +483,16 @@
 
                         <a class="most-popular-card-link" href="/ford-transit-radio-codes" title="Ford Transit Radio Code">
 
-                            <h4 class="title is-4
-
-                                                        most-popular-card-title">Ford
-
-                                Transit</h4>
-
+                            <h4 class="title is-4 most-popular-card-title">Ford Transit</h4>
                             <div class="most-popular-card-image"><img src="img/popular-ford-transit-radio.jpg" alt="Ford Transit Radio Code">
-
                             </div>
-
                         </a>
-
                     </div>
-
-                </div>
-
+                </div> -->
             </div>
-
-
-
             <br>
 
-
-
-            <div class="swiper-wrapper row">
+            <!-- <div class="swiper-wrapper row">
 
 
 
@@ -609,7 +556,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
 
 
 
@@ -656,32 +603,32 @@
                             </a>
 
                         </div>
-                            
-                    @foreach($faqs as $faq)
+
+                        @foreach($faqs as $faq)
                         <div>
-                        <div class="faq-item accordion-item">
+                            <div class="faq-item accordion-item">
 
-                            <div class="faq-header accordion-title">
+                                <div class="faq-header accordion-title">
 
-                                <span>{{ $faq->title }}</span>
+                                    <span>{{ $faq->title }}</span>
 
-                                <span class="icon"><i class="mdi
+                                    <span class="icon"><i class="mdi
 
                                                     mdi-plus"></i></span>
 
+                                </div>
+
+                                <div class="faq-content accordion-content">
+
+                                    <p>{{ $faq->description }}</p>
+
+                                </div>
+
                             </div>
-
-                            <div class="faq-content accordion-content">
-
-                                <p>{{ $faq->description }}</p>
-
-                            </div>
-
-                        </div>
                         </div>
                         @endforeach
                     </div>
-                    
+
 
                 </div>
 
@@ -1019,18 +966,8 @@
 
 <script type="4ad272c5c0a5a13933db3d84-text/javascript">
     var bricklayer1 = new Bricklayer(document.querySelector('.review-masonary'))
-
     var bricklayer2 = new Bricklayer(document.querySelector('.main-masonary'))
-
-
-
-
-
-
-
     var swiper = new Swiper("#MostPopularSLider", swiperOptions);
-
-
 
     var swiperOptions = {
 
@@ -1046,8 +983,6 @@
 
     };
 </script>
-
-
 
 <script>
     function display_choose_section() {
@@ -1076,12 +1011,8 @@
     // });
 </script>
 
-
-
 @endsection
 
 @section('footer_content')
-
-
 
 @endsection
