@@ -1,0 +1,296 @@
+.fixed-top.main-header {
+    background: #001d3d;
+}
+
+.main-header .navbar-dark .navbar-nav .nav-link {
+    font-size: 1.25rem;
+    color: #fff;
+}
+.main-header .navbar-dark .navbar-nav .active > .nav-link,
+.main-header .navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--primary);
+}
+
+.no-hero {
+    margin-top: 6.5rem;
+    color: black;
+}
+
+.main-header .dropdown-manufacturers {
+    padding: 0.5rem;
+    width: max-content;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-header .dropdown-manufacturers img {
+    width: 50px;
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+section.hero {
+    min-height: 600px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #001d3d;
+}
+
+section.hero .search-form input#searchQuery {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+}
+
+section.hero .button-section .btn {
+    font-size: 1.15rem;
+    padding-left: 4.5em;
+    padding-right: 4.5em;
+    color: #fff;
+    margin: 0 0.5em;
+}
+
+.work-section .heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-section .heading span {
+    font-size: 3rem;
+    margin-right: 0.15em;
+}
+
+.work-section .img-section {
+    border-radius: 40px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.work-section .description {
+    text-align: center;
+}
+
+.about-section {
+    background-color: #001d3d;
+    color: #fff;
+}
+
+.about-section .title {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# faq Section
+--------------------------------------------------------------*/
+.accordion-section .section-heading {
+    margin-bottom: 2rem;
+}
+
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    background: #f4f4f4;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-heading {
+    transition: all 150ms ease;
+}
+.accordion-section .panel-default .panel-title a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #001d3d;
+    transition: all 150ms ease;
+}
+.accordion-section .panel-default .panel-heading:hover {
+    background-color: #001d3d;
+}
+.accordion-section .panel-default .panel-heading:hover a {
+    color: #fff;
+}
+
+.accordion-section .panel-default .panel-title a:hover {
+    text-decoration: none;
+}
+
+.accordion-section .panel-default .panel-title a:after {
+    font-size: 1.5rem;
+    content: "\2228";
+    color: #001d3d;
+    transition: all 150ms ease;
+    transform-origin: 50% 50%;
+}
+.accordion-section .panel-default .panel-heading:hover a:after {
+    color: #fff;
+}
+
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    transform: rotate(180deg);
+}
+
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+}
+
+/**
+ * Footer Section
+ */
+.trust-section {
+    margin-top: 5rem;
+}
+
+.trust-section .item h2 {
+    font-size: 1.45rem;
+}
+
+.trust-section .item img {
+    width: 50px;
+    display: inline-block;
+    margin-right: 0.2rem;
+}
+
+.main-footer {
+    background: #001d3d;
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.main-footer .help-full-info ul {
+    list-style: "\21E8"outside none;
+}
+
+.main-footer .help-full-info ul li {
+    padding-left: 0.5em;
+}
+
+.main-footer .choose-us ul {
+    list-style: "\2605"outside none;
+}
+
+.main-footer .choose-us ul li {
+    padding-left: 0.5em;
+}
+
+.main-footer hr {
+    background-color: #fff;
+}
+
+.main-footer li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-footer a {
+    color: #fff;
+}
+
+.main-footer .bottom-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-footer nav {
+    margin-bottom: 1.5rem;
+}
+
+.main-footer nav a {
+    display: inline-block;
+    margin: 0 0.25em;
+}
+
+.main-footer .social a {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 0 0.25em;
+}
+
+.main-footer .social a:hover {
+    text-decoration: none;
+    color: #ffc300;
+}
+
+.manufacturer-serial-num-form input[type="text"].form-control {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+}
+
+.manufacturer-description p {
+    margin-bottom: 0.25rem;
+}
+.code-available {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.code-available .card {
+    max-width: 480px;
+    width: 100%;
+}
+.code-available .card-header {
+    background-color: #001d3d;
+    color: #fff;
+}
+.code-available .card-header .tick {
+    padding-right: 0.5em;
+}
+.code-available .card-header .tick i {
+    font-size: 2rem;
+    color: #ffc300;
+}
+.code-available .serial {
+    margin-bottom: 1rem;
+}
+.code-available .serial p {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.code-available .serial p span {
+    font-weight: 400;
+}
+
+.code-available label {
+    font-weight: 600;
+    color: #001d3d;
+}
+.card-link,
+.card-link .title,
+.card-link .description {
+    color: #001d3d;
+}
+.card-link {
+    padding-top: 1rem;
+}
+.card-link .card-img-top {
+    width: 100%;
+    margin: auto;
+    max-width: 75px;
+    transition: all 150ms ease;
+}
+
+.card-link:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-link:hover {
+    text-decoration: none;
+}

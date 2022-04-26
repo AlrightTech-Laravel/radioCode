@@ -1,0 +1,295 @@
+/*
+Item Name : Mega Menu Responsibe Based on Boostrap grid
+Version: 1.0.0
+Author: Ansonika
+Author URI: http://themeforest.net/user/Ansonika/
+
+CSS STRUCTURE:
+
+1. BASE
+2.  COMMON
+3. MEDIA QUERIES
+
+/*============================================================================================*/
+/* 1.  BASE  */
+/*============================================================================================*/
+
+.megamenu_container {
+	text-align:right;
+	margin: 22px 15px 0 0;
+	text-transform:uppercase;
+	font-weight:700;
+
+}
+.megamenu > li {
+	display:inline;
+	border:none;
+	margin:0;
+	color:#999;
+	padding-right:10px;
+	}
+.megamenu > li a{
+	color:#989898;
+	text-decoration:none;
+	}
+.megamenu > li a:hover{
+	color:#333;
+	text-decoration:none;
+	}
+
+		.megamenu > li a.drop-down {
+			background-image:url("../img/arrow-down.png");
+			background-repeat: no-repeat;
+			background-position:right 20px;
+			padding:14px 15px 15px 0;
+			color:#969696;
+			outline:none;
+		}
+	
+		.megamenu > li a.drop-down:hover {
+			cursor:pointer;
+			color:#333;
+			outline:none;
+		}
+		
+		.megamenu> li.active .drop-down{
+			cursor:pointer;
+			background-image:url("../img/arrow-down.png");
+			color:#333;
+		}
+	
+	
+		a#megamenu-button-mobile {
+			background-image: url("../img/menu-down.png");
+			background-repeat: no-repeat;
+			background-position: right top;
+			height:32px;
+			width:32px;
+			display:none;
+			float:right;
+			margin-right:15px;
+			outline:none;
+			border:none;
+	
+		}
+		a#megamenu-button-mobile.active {
+			background-image:url("../img/menu-up.png");
+			background-position: right top;
+			cursor:pointer;
+		}
+
+.megamenu > li .drop-down-container {
+	position:fixed;
+	top:65px;
+	left:0;
+	color:#f2f2f2;
+	width: 100%;
+	border-top:none;
+	background:#f8f8f8;
+	display: none;
+	text-align:center;
+	text-transform:none;
+	overflow-y:auto;
+	height:100%;
+	padding-top:20px;
+	padding-bottom:30px;
+}
+
+.drop-down-container ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.drop-normal {
+	position:relative;
+}
+.megamenu > li .drop-down-container.normal {
+	 position:absolute; top:46px; left:0px;
+	display: none;
+	overflow-y: visible;
+	width:auto;
+	padding-top:0;
+	padding-bottom:0;
+	background:none;
+	height:auto;
+}
+.drop-down-container.normal ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.drop-down-container.normal ul li{
+	text-align:left;
+}
+.drop-down-container.normal ul li a{
+	display:block;
+	padding:5px 10px;
+	width:180px;
+	margin-bottom:3px;
+	color:#fff;
+	background-color:#006db8;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.drop-down-container.normal ul li a:hover{
+	background-color:#111;
+	color:#fff;
+}
+
+
+/*============================================================================================*/
+/* 2.  COMMON  */
+/*============================================================================================*/
+
+.menu-item{
+	padding:0 10px;
+	font-weight:normal;
+}
+
+.menu-item h3 {
+	text-transform:uppercase;
+	font-weight:700;
+	line-height:24px;
+	margin:0;
+	padding:0;
+}
+
+.menu-item a:hover h3 {
+	color:#006db8;
+}
+
+.menu-item .details-btn {
+	display: inline-block;
+	background: #006db8;
+    color: #fff;
+    margin: auto;
+    padding: 5px 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "alpha(Opacity=0)";
+    font-size: 12px;
+    font-style: normal;
+	width:0;
+	position:relative;
+	top:-100px;
+	
+}
+.menu-item:hover .details-btn{
+	 opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transition: width .2s ease;
+    -moz-transition: width .2s ease;
+    -o-transition: width .2s ease;
+    -ms-transition: width .2s ease;
+    transition: width .2s ease;
+    width: 50%;
+}
+.megamenu > li .drop-down-container a {
+	color:#333;
+}
+.megamenu > li .drop-down-container a:hover {
+	color:#333;
+	text-decoration:none;
+}
+
+
+
+/*============================================================================================*/
+/* 3.  MEDIA QUERIES  */
+/*============================================================================================*/
+
+@media (min-width: 980px) and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 980px) {
+
+.menu-item h3 {font-size:18px;}
+
+}
+
+@media only screen and (max-width: 767px) {
+	
+a#megamenu-button-mobile {display:block; }
+
+header {
+	position:relative;
+	overflow:hidden;
+	border-bottom:1px solid #ccc;
+}
+.megamenu > li .drop-down-container {
+	height:auto;
+	top:0;
+	z-index:999;
+	padding:0;
+	overflow-y:hidden;
+	position:relative;
+	background:#fff;
+	padding-left:0;
+}
+
+.megamenu > li .drop-down-container.normal {
+	 position:relative; 
+	 top:0; left:0px;
+	display: none;
+	overflow-y: visible;
+	width:auto;
+	padding-top:0;
+	padding-bottom:0;
+	background:none;
+	height:auto;
+}
+
+ul.megamenu {
+	float:left;
+	width:100%;
+	position:relative;
+	padding:10px 0 0 0;
+	margin:0 15px 0 15px;
+	padding-right:15px;
+}
+ul.megamenu li:first-child {
+	border-top: none;
+}
+.megamenu > li {
+	float:none;
+	width:100%;
+	text-align:left;
+	border:none;
+	display: block;
+	padding: 5px 0;
+	margin:0;
+	border-top: 1px solid #ededed;
+}
+.megamenu > li a, .megamenu > li a.drop-down{ 
+	display: block;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+
+.megamenu > li a.drop-down  {background-position:98.5% center;}
+.megamenu {display:none;}
+
+.menu-item img{ padding:0; margin:0 0 0 20px;height:40px; width:auto; float:right; display:block; }
+.menu-item { margin:0; padding-top:20px; text-align:left; height:auto;  }
+.drop-down-container ul li  { border-top:1px solid #ededed; padding-bottom:0; margin-bottom:0; height:80px;	background:#f8f8f8; }
+.drop-down-container.normal ul { margin:0; padding:0;margin-top:7px;}
+.drop-down-container.normal ul li  { border-top:1px solid #ededed; padding:0; margin-bottom:0; height:auto;background:none; }
+.drop-down-container.normal ul li a {width:100%; background:none; color:#999;}
+.drop-down-container.normal ul li a:hover {background:none; color:#333;}
+.drop-down-container div.container,.drop-down-container ul.row  { margin:0; padding:0;}
+
+.menu-item .details-btn {display:none;}
+.menu-item h3 {
+	font-size:16px;
+	line-height:16px;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+}
