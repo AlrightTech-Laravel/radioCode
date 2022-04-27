@@ -7,6 +7,7 @@ use App\Models\Choose;
 use App\Models\Manufacturer;
 use App\Models\ManufacturerCategory;
 use App\Models\Order;
+use App\Models\Serials;
 use App\Models\RadioSerialNumber;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class WebsiteController extends Controller {
         $brands = ManufacturerCategory::all();
         $chooses = Choose::all();
         $faqs = Faq::all();
-        return view('website.online-ford-radio-codes', compact('brands', 'chooses', 'faqs'));
+        $serials = Serials::all();
+        return view('website.online-ford-radio-codes', compact('brands', 'chooses', 'faqs', 'serials'));
     }
 
     public function brandsList() {

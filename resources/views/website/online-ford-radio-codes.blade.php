@@ -13,6 +13,19 @@
         font-size: 15px;
     }
 
+    .line{
+        width: 100%;
+        border-top: 1px solid black;
+    }
+
+    .fontbold{
+        font-weight: 600;
+    }
+
+    .fontweight{
+        font-weight: 700;
+    }
+
     .choosus-hide {
         display: block;
     }
@@ -29,6 +42,11 @@
         .choosus-hide {
             display: none;
         }
+
+        input {
+  font-family: sans-serif;
+  font-size: 16px;
+}
     }
 </style>
 @endsection
@@ -40,6 +58,12 @@
 
 
 <header class="hero has-background is-medium is-white homepage is-primary-gradient section-arrow next-is-light">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
     <div class="container has-text-centered is-max-desktop">
 
@@ -85,10 +109,9 @@
 
                 <div class="field has-addons">
 
-                    <div class="control">
+                    <div class="control" id="input">
 
-                        <input id="radio-serial" name="serial" type="serial" class="input is-large rotating-placeholder" type="text" placeholder="SERIAL NUMBER" data-placeholder="V123456,M987456,C73F0961 C 0536857,BP62034 596031, Serial Number">
-
+                        <input id="i" name="serial" type="serial" class="input is-large rotating-placeholder" type="text" placeholder="SERIAL NUMBER">
                     </div>
 
                     <div class="control is-hidden">
@@ -129,11 +152,9 @@
 
                     <div>
 
-                        <a class="jb-modal" data-target="example-images-box-modal" title="Example Serials">
-
-                            <span><i class="mdi mdi-information-outline mr-1"></i>Example Serials</span>
-
-                        </a>
+                     <span><i class="mdi mdi-information-outline mr-1"></i></span><a  data-bs-toggle="modal" data-bs-target="#exampleModal"> <u>Example Serials</u>
+                    
+                    </a>
 
                     </div>
 
@@ -144,10 +165,42 @@
         </div>
 
     </div>
-
 </header>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="d-flex justify-content-center">
+          <h2 class="fontweight">Radio Code</h2>
+      </div>
+      <div class="line"></div>
+      <div class="modal-body" style="text-align: center;">
+        <h3>Example Series</h3>
+      </div>
+      <div class="line"></div>
+      <div style="text-align: center;">
 
+        <p>
+            If you need any assistance in finding your serial please
+            <a title="contact us" href="#" target="_blank" rel="noopner" style="color: orangered;">contact us</a>
+            via live chat, telephone, or over email.
+        </p>
+
+        </div>
+        @if(isset($serials))
+        @foreach($serials as $serial)
+        <div style="text-align: center;">
+        <p class="fontbold">{{ $serial->serial_number }}</p>
+        </div>
+        @endforeach
+        @endif
+    </div>
+  </div>
+</div>
 
 <section class="section is-small is-light section-arrow
 
@@ -984,7 +1037,25 @@
     };
 </script>
 
+
 <script>
+
+var delay = 1000;
+var vals = ['V123456', 'M987456', 'C73F0961 C 0536857','BP62034 596031','SERIAL NUMBER'];
+var input = document.getElementById('i');
+
+for (var i = 0; i < vals.length; i++) {
+    set(vals[i], i * delay);
+}
+
+function set(v, d) {
+    setTimeout(function () {
+        setInterval(function () {
+            input.setAttribute('placeholder', v);            
+        }, delay * vals.length);
+    }, d);
+}
+
     function display_choose_section() {
         jQuery('#chooseus-section').css('display', 'block');
         return false;

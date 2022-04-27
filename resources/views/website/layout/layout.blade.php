@@ -23,10 +23,12 @@
             integrity="sha512-bquf0AjSG/1xvIavlaGr4AqlB3/+Suf+cTgnpBZ0ulkqD1a/D/Aw4p3X442d8TQ+WBRmZVg8nwNaeEtBuTOfpQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="dns-prefetch" href="https://fonts.gstatic.com">
       <link rel="stylesheet" href="{{asset('assets/jzj7cll.css')}}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
       <link rel="stylesheet" href="{{asset('assets/font-awesome/css/font-awesome.css')}}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
       @yield('header_content')
-
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       <script type="ed73284494a5a174b4a9093e-text/javascript" src="{{asset('assets/bootstrap/v5/tp.widget.bootstrap.min.js')}}" async=""></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.5.95/css/materialdesignicons.min.css" integrity="sha512-Zw6ER2h5+Zjtrej6afEKgS8G5kehmDAHYp9M2xf38MPmpUWX39VrYmdGtCrDQbdLQrTnBVT8/gcNhgS4XPgvEg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script type="ed73284494a5a174b4a9093e-text/javascript">
