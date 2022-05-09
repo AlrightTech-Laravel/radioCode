@@ -42,8 +42,14 @@ class RadioCodeOrderController extends Controller {
     }
 
     public function getSerialInfo(Request $request) {
-        $serial = Serials::where('serial_number', $request->serial_number)->with('manufacturer')->first();
-        // dd($serial);
+        if($request->has('serial')){
+            $serial = Serials::where('serial_number', $request->get('serial'))->with('manufacturer')->first();
+        }else{
+            $serial = Serials::where('serial_number', $request->serial_number)->with('manufacturer')->first();
+        }
+        if(!$serial){
+            return redirect()->back()->withErrorMessage('Serial number not found.');
+        }
         $data = [
             'manufacturer' => $serial->manufacturer,
             'serial' => $serial,
@@ -69,9 +75,11 @@ class RadioCodeOrderController extends Controller {
 
         $required_fields = [];
         $serial = Serials::where('serial_number', $request->serial_number)->where('manufacturer_id', $manufacturer->id)->first();
+        if (is_iterable($serial)){
         foreach ($serial->required_fields as $item) {
             $required_fields[$item] = $request->{$item};
         }
+    }
 
         $order_data = [
             'manufacturer_id' => $manufacturer->id,

@@ -11,9 +11,9 @@
             <li class="sidebar-menu-list-item"><a href="{{route('fordRadioCodes')}}" title="Ford Radio Codes">Ford Radio Codes<span class="tag is-primary"> Most Popular</span></a></li>
             <li class="sidebar-menu-list-item"><a href="{{route('brandsList')}}" title="View All Radio Codes">Browse Radio Codes</a></li>
             <li class="sidebar-menu-list-item"><a href="#" title="Customer Reviews">Customer Reviews</a></li>
-            <li class="sidebar-menu-list-item"><a href="#" title="Contact Us">Contact us</a></li>
-            <li class="sidebar-menu-list-item"><a href="#" title="About Us">About</a></li>
-            <li class="sidebar-menu-list-item"><a href="#" title="FAQ's">FAQ's</a></li>
+            <li class="sidebar-menu-list-item"><a href="contact" title="Contact Us">Contact us</a></li>
+            <li class="sidebar-menu-list-item"><a href="#AboutUs" title="About Us">About</a></li>
+            <li class="sidebar-menu-list-item"><a href="faqs" title="FAQ's">FAQ's</a></li>
             <li class="sidebar-menu-list-item">
                 <a href="tel:+447707520420" title="Call Now">
                 <div><span class="icon"><i class="mdi mdi-phone-outline"></i></span>Call Now</div>

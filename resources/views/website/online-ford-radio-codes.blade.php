@@ -76,8 +76,13 @@
                 <p class="subtitle">We provide all Ford vehicle radio codes, including Focus, Fiesta, Transit and more. Get yours today.</p>
 
             </div>
+                            <!-- @if($errors->any())
+                                {{ implode('', $errors->all('<div>:message</div>')) }}
+                            @endif -->
 
-            <form id="BuyBox" action="/checkout/contact-information.php" method="POST" autocomplete="off">
+            <form id="BuyBox" action="{{ url('get-radio-code/get-serial-info')}}" method="POST" autocomplete="off">
+                
+                @csrf
 
                 <div class="secure-checkout is-flex is-align-items-center is-justify-content-center mt-3 has-text-centered">
 
@@ -186,7 +191,7 @@
 
         <p>
             If you need any assistance in finding your serial please
-            <a title="contact us" href="#" target="_blank" rel="noopner" style="color: orangered;">contact us</a>
+            <a title="contact us" href="{{ url('contact') }}" target="_blank" rel="noopner" style="color: orangered;">contact us</a>
             via live chat, telephone, or over email.
         </p>
 
@@ -1080,6 +1085,37 @@ function set(v, d) {
     //   },
 
     // });
+</script>
+
+<script type="text/javascript">
+    function submitFormWithSerial(){
+        var route = "contact-information";
+        var form = $('#dynamic_form')[0];
+        var data = new FormData(form);
+
+        $.ajax({
+            type: "POST",
+            url: route,
+            data: data,
+            processData: false,
+            currentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+                console.log(data)
+                if(data.serials){
+                    var old_Modal = document.getElementById('response_serials');
+                    old_Modal.innerHTML = "";
+                    $.each(data.serials, function(index, serial){
+                        $("#response_serials").append("<p>"+serial.serial_number+"</p>");
+                    });
+                    $("#example-images-box-modal").addClass("is-active");
+                }else{
+                    document.getElementById("dynamic_form").submit();
+                }
+            }
+        });
+    }
 </script>
 
 @endsection
